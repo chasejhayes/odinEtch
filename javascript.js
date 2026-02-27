@@ -7,25 +7,27 @@ function createGrid() {
         container.appendChild(line);
         for (let j = 0; j < 16; j++) {
             div = document.createElement("div");
+            div.classList.add("colorBox")
             div.style.cssText = "background-color: red; height: 10px; width: 10px; margin: 2px;";
             line.appendChild(div)
         }
     }
 }
 
-
-
-// function createGrid() {
-//     for (let i = 0; i < 16; i++) {
-//         div = document.createElement("div");
-//         div.style.cssText = "background-color: red; height: 10px; width: 10px; margin: 2px;";
-//         line.appendChild(div)
-//     }
-// }
-
 createGrid();
 
+function changeColor(test){
+    test.style.color = "peach"
+
+}
+
+const colorBox = document.querySelectorAll(".colorBox");
+
+colorBox.forEach(box => {
+    box.addEventListener("mouseover", ()=> {
+        box.style.backgroundColor = "aqua";
+    })
+})
 
 
-// I want a function that makes 16 containers
-// Then a second function that fills each container with divs
+
