@@ -1,5 +1,4 @@
-.div1{
-    height: 100px;
-    width: auto;
-    background-color: aqua;
+#container{
+    width: 500px;
+    height: 500px;
 }
