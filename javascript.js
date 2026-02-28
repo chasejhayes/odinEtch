@@ -19,16 +19,21 @@ promptButton.addEventListener("click", () => {
     function playEtch(numberOfDivs) {
         function createGrid() {
             document.getElementById("container").innerHTML = "";
-            for (let i = 0; i < numberOfDivs; i++) {
-                let line = document.createElement("div");
-                container.appendChild(line);
-                for (let j = 0; j < numberOfDivs; j++) {
-                    let div = document.createElement("div");
-                    div.classList.add("colorBox")
-                    div.style.cssText = "background-color: red; height: 10px; width: 10px; margin: 2px;";
-                    line.appendChild(div)
+            if (numberOfDivs > 50) {
+                return alert("Must be 50 or less")
+            } else {
+                for (let i = 0; i < numberOfDivs; i++) {
+                    let line = document.createElement("div");
+                    container.appendChild(line);
+                    for (let j = 0; j < numberOfDivs; j++) {
+                        let div = document.createElement("div");
+                        div.classList.add("colorBox")
+                        div.style.cssText = "background-color: red; height: 10px; width: 10px; margin: 2px;";
+                        line.appendChild(div)
+                    }
                 }
             }
+
         }
         createGrid();
         const colorBox = document.querySelectorAll(".colorBox");
@@ -42,7 +47,7 @@ promptButton.addEventListener("click", () => {
     playEtch(numberOfDivs);
 });
 
-// clear canvas every time the button is pressed
+
 // set a standard total space for the canvas 
 // set a limit for amount of squares the user can imput 
 
